@@ -4,8 +4,15 @@ import { db } from "./db";
 import { eq } from "drizzle-orm";
 import { todos } from "./db/schema";
 import { cors } from "@elysiajs/cors";
+import staticPlugin from "@elysiajs/static";
 
-const app = new Elysia().use(cors()).decorate("db", db);
+const app = new Elysia()
+  .use(cors())
+  .get("/", ({ set }) => {
+    set.redirect = "/index.html";
+  })
+  .use(staticPlugin({ prefix: "/", assets: env.PUBLIC_DIR }))
+  .decorate("db", db);
 
 app.get("/todos", async ({ db }) => await db.query.todos.findMany());
 
