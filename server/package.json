@@ -3,12 +3,26 @@
   "module": "src/index.ts",
   "type": "module",
   "scripts": {
-    "serve": "bun src/index.ts"
+    "start": "bun src/index.ts",
+    "dev": "bun --hot src/index.ts",
+    "db:generate": "drizzle-kit generate:sqlite",
+    "db:migrate": "bun scripts/migrate.ts",
+    "db:push": "drizzle-kit push:sqlite",
+    "db:pull": "drizzle-kit introspect:sqlite",
+    "db:drop": "drizzle-kit drop"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "better-sqlite3": "^8.6.0",
+    "bun-types": "latest",
+    "drizzle-kit": "^0.19.13"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@elysiajs/cors": "^0.7.0",
+    "drizzle-orm": "^0.28.6",
+    "elysia": "^0.7.5",
+    "zod": "^3.22.2"
   }
 }

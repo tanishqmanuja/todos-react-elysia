@@ -170,3 +170,11 @@ dist
 
 # IntelliJ based IDEs
 .idea
+
+# drizzle
+
+.drizzle
+
+# Local Database
+
+todos.db
