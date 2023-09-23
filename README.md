@@ -1,26 +1,40 @@
-# React + Elysia Todo App
+# Todo App (React + Elysia)
 
-Demo for a fullstack todos app with react + elysia using bun instead of node.
+A fullstack todos app built with react and elysia using bunJS.
 
-# Client
+## Client
 
-Runtime: Bun
-Web Framework: React
-Tooling: Bun
+Uses the following tech stack.
 
-## Installing Dependencies
+- Web Framework: React
+- State Management: Zustand
+- Icons: Lucide Icons
+- Tooling: Vite, Bun
+
+### Installing Dependencies
 
 ```sh
 bun i
 ```
 
-# Server
+### Starting Sev Server
 
-Runtime: Bun
-Server Framework: Elysia
-DB: Bun SQlite (with better-sqlite3 binaries for drizzle push support)
+```sh
+bun dev
+```
 
-## Installing Dependencies
+## Server
+
+Uses the following tech stack.
+
+- Runtime: Bun
+- Server Framework: Elysia
+- DB: Bun SQlite
+- ORM: Drizzle
+
+> drizzle sqlite uses better-sqlite3 binaries for drizzle-kit:push support
+
+### Installing Dependencies
 
 ```sh
 bun i
@@ -35,8 +49,14 @@ bun add --global node-gyp
 bun run --cwd node_modules/better-sqlite3 build-debug
 ```
 
-For Generating a todos.db file
+For Generating a todos.db file if not present
 
 ```sh
 bun db:push
+```
+
+### Starting Sev Server
+
+```sh
+bun dev
 ```
