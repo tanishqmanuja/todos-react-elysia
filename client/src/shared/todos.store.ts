@@ -3,6 +3,9 @@ import { type Todo, todosService } from "./todos.service";
 
 export type TodoStore = {
   todos: Todo[];
+  currentlyEditing: Todo["id"] | null;
+  enableEditing: (id: Todo["id"]) => void;
+  disableEditing: () => void;
   fetchTodos: () => Promise<void>;
   addTodo: (todo: Omit<Todo, "id" | "completed">) => Promise<void>;
   updateTodo: (
@@ -14,6 +17,7 @@ export type TodoStore = {
 
 export const useTodoStore = create<TodoStore>((set) => ({
   todos: [],
+  currentlyEditing: null,
   fetchTodos: async () => {
     const todos = await todosService.getTodos();
     set({ todos });
@@ -36,4 +40,6 @@ export const useTodoStore = create<TodoStore>((set) => ({
       todos: state.todos.filter((t) => t.id !== id),
     }));
   },
+  enableEditing: (id) => set((state) => ({ ...state, currentlyEditing: id })),
+  disableEditing: () => set((state) => ({ ...state, currentlyEditing: null })),
 }));

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useTodoStore } from "./shared/todos.store";
 import TodoAddForm from "./components/TodoAddForm";
 import TodoList from "./components/TodoList";
+import TodoEditModal from "./components/TodoEditModal";
 
 function App() {
   const todoStore = useTodoStore();
@@ -25,6 +26,8 @@ function App() {
         <h2 className="text-xl">Todo List</h2>
         <TodoList />
       </main>
+
+      <TodoEditModal />
     </>
   );
 }
