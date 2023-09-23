@@ -33,11 +33,13 @@ api.group("/todos", (router) =>
     )
     .post(
       "/",
-      async ({ db, body }) =>
-        await db
+      async ({ db, body }) => {
+        const [todo] = await db
           .insert(todos)
           .values({ id: crypto.randomUUID(), ...body })
-          .returning(),
+          .returning();
+        return todo;
+      },
       {
         body: TodoDTO,
       }
