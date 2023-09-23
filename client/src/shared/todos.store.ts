@@ -7,7 +7,9 @@ export type TodoStore = {
   enableEditing: (id: Todo["id"]) => void;
   disableEditing: () => void;
   fetchTodos: () => Promise<void>;
-  addTodo: (todo: Omit<Todo, "id" | "completed">) => Promise<void>;
+  addTodo: (
+    todo: Omit<Todo, "id" | "completed" | "createdAt">
+  ) => Promise<void>;
   updateTodo: (
     id: Todo["id"],
     todo: Partial<Omit<Todo, "id">>

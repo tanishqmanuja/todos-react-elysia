@@ -4,13 +4,16 @@ export type Todo = {
   id: string;
   title: string;
   completed: boolean;
+  createdAt: number;
 };
 
 async function getTodos(): Promise<Todo[]> {
   return fetch(`${API_ENDPOINT}/todos`).then((res) => res.json());
 }
 
-async function addTodo(todo: Omit<Todo, "id" | "completed">): Promise<Todo> {
+async function addTodo(
+  todo: Omit<Todo, "id" | "completed" | "createdAt">
+): Promise<Todo> {
   return fetch(`${API_ENDPOINT}/todos`, {
     method: "POST",
     headers: {
