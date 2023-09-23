@@ -22,7 +22,7 @@ export default function TodoListItem({ todo }: { todo: Todo }) {
         <button
           id="edit"
           type="button"
-          className="bg-sky-700 text-blue-100 hover:text-white rounded-md p-2"
+          className="bg-sky-700 text-blue-100 hover:text-white rounded-md p-2 hidden"
         >
           <Pencil size={20} />
         </button>
