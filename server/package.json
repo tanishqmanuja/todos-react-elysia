@@ -4,7 +4,9 @@
   "type": "module",
   "scripts": {
     "start": "bun src/index.ts",
+    "serve": "bun dist/index.js",
     "dev": "bun --hot src/index.ts",
+    "build": "bun build src/index.ts --outdir dist --target bun --minify",
     "db:generate": "drizzle-kit generate:sqlite",
     "db:migrate": "bun scripts/migrate.ts",
     "db:push": "drizzle-kit push:sqlite",
