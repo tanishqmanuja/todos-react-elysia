@@ -1,4 +1,6 @@
-const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT ?? "/api";
+import env from "../env";
+
+const API_ENDPOINT = env.API_ENDPOINT;
 
 export type Todo = {
   id: string;
