@@ -1,6 +1,6 @@
-# Todo App (React + Elysia)
+# Todos App (React + ElysiaJS)
 
-A fullstack todos app built with react and elysia using bunJS.
+A simple starter fullstack todos app built with React and ElysiaJS using bunJS.
 
 ## Client
 
@@ -8,6 +8,7 @@ Uses the following tech stack.
 
 - Web Framework: React
 - State Management: Zustand
+- Styling: TailwindCSS
 - Icons: Lucide Icons
 - Tooling: Vite, Bun
 
