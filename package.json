@@ -1,0 +1,18 @@
+{
+  "name": "todos",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build"
+  },
+  "devDependencies": {
+    "turbo": "^1.10.14"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ]
+}
