@@ -24,6 +24,7 @@
   "dependencies": {
     "@elysiajs/cors": "^0.7.0",
     "@elysiajs/static": "^0.7.0",
+    "@elysiajs/swagger": "^0.7.3",
     "drizzle-orm": "^0.28.6",
     "elysia": "^0.7.5",
     "zod": "^3.22.2"
