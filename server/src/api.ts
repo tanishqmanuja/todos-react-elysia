@@ -16,7 +16,11 @@ export const api = new Elysia({ prefix: "/api" }).decorate("db", db);
 
 api.group("/todos", (router) =>
   router
-    .get("/", async ({ db }) => await db.query.todos.findMany())
+    .get("/", async ({ db }) => await db.query.todos.findMany(), {
+      detail: {
+        tags: ["Todos"],
+      },
+    })
     .get(
       "/:id",
       async ({ db, params }) => {
@@ -29,6 +33,9 @@ api.group("/todos", (router) =>
       },
       {
         params: WithIdDTO,
+        detail: {
+          tags: ["Todos"],
+        },
       }
     )
     .post(
@@ -42,6 +49,9 @@ api.group("/todos", (router) =>
       },
       {
         body: TodoDTO,
+        detail: {
+          tags: ["Todos"],
+        },
       }
     )
     .put(
@@ -63,6 +73,9 @@ api.group("/todos", (router) =>
       {
         params: WithIdDTO,
         body: t.Partial(TodoDTO),
+        detail: {
+          tags: ["Todos"],
+        },
       }
     )
     .delete(
@@ -82,6 +95,9 @@ api.group("/todos", (router) =>
       },
       {
         params: WithIdDTO,
+        detail: {
+          tags: ["Todos"],
+        },
       }
     )
 );
