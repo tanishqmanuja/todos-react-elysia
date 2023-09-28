@@ -1,6 +1,5 @@
 {
   "name": "server",
-  "module": "src/index.ts",
   "type": "module",
   "scripts": {
     "start": "bun src/index.ts",
@@ -28,5 +27,8 @@
     "drizzle-orm": "^0.28.6",
     "elysia": "^0.7.5",
     "zod": "^3.22.2"
+  },
+  "exports": {
+    ".": "./src/index.ts"
   }
 }
