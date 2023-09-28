@@ -1,3 +1,3 @@
 export default {
-  API_ENDPOINT: import.meta.env.VITE_API_ENDPOINT ?? "/api",
+  SERVER_URL: import.meta.env.VITE_SERVER_URL ?? "/",
 };

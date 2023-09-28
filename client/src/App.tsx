@@ -1,16 +1,8 @@
-import { useEffect } from "react";
-import { useTodoStore } from "./shared/todos.store";
 import TodoAddForm from "./components/TodoAddForm";
 import TodoList from "./components/TodoList";
 import TodoEditModal from "./components/TodoEditModal";
 
 function App() {
-  const todoStore = useTodoStore();
-
-  useEffect(() => {
-    todoStore.fetchTodos();
-  }, []);
-
   return (
     <>
       <header className="px-3 sm:px-4 py-4 mx-auto max-w-3xl">

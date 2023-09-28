@@ -1,47 +1,49 @@
+import { edenFetch } from "@elysiajs/eden";
+import { App } from "server";
 import env from "../env";
 
-const API_ENDPOINT = env.API_ENDPOINT;
+const fetch = edenFetch<App>(env.SERVER_URL);
 
-export type Todo = {
-  id: string;
-  title: string;
-  completed: boolean;
-  createdAt: number;
-};
-
-async function getTodos(): Promise<Todo[]> {
-  return fetch(`${API_ENDPOINT}/todos`).then((res) => res.json());
+function handleError<T>({
+  data,
+  error,
+}: { data: T; error: null } | { data: null; error: Error }): T {
+  if (error) {
+    throw error;
+  }
+  return data;
 }
 
-async function addTodo(
-  todo: Omit<Todo, "id" | "completed" | "createdAt">
-): Promise<Todo> {
-  return fetch(`${API_ENDPOINT}/todos`, {
+async function getTodos() {
+  return fetch("/api/todos/", { method: "GET" }).then(handleError);
+}
+
+export type Todo = Awaited<ReturnType<typeof getTodos>>[number];
+
+async function addTodo(todo: Omit<Todo, "id" | "completed" | "createdAt">) {
+  return fetch("/api/todos/", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(todo),
-  }).then((res) => res.json());
+    body: todo,
+  }).then(handleError);
 }
 
-async function updateTodo(
-  todoId: Todo["id"],
-  todo: Partial<Omit<Todo, "id">>
-): Promise<Todo> {
-  return fetch(`${API_ENDPOINT}/todos/${todoId}`, {
+async function updateTodo(todoId: Todo["id"], todo: Partial<Omit<Todo, "id">>) {
+  return fetch("/api/todos/:id", {
     method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
+    params: {
+      id: todoId,
     },
-    body: JSON.stringify(todo),
-  }).then((res) => res.json());
+    body: todo,
+  }).then(handleError);
 }
 
-async function removeTodo(todoId: Todo["id"]): Promise<Todo> {
-  return fetch(`${API_ENDPOINT}/todos/${todoId}`, {
+async function removeTodo(todoId: Todo["id"]) {
+  return fetch("/api/todos/:id", {
     method: "DELETE",
-  }).then((res) => res.json());
+    params: {
+      id: todoId,
+    },
+  }).then(handleError);
 }
 
 export const todosService = {
