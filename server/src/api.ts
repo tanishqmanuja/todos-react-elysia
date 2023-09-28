@@ -12,92 +12,92 @@ const WithIdDTO = t.Object({
   id: t.String(),
 });
 
-export const api = new Elysia({ prefix: "/api" }).decorate("db", db);
+export const api = new Elysia({ prefix: "/api" })
+  .decorate("db", db)
+  .group("/todos", (router) =>
+    router
+      .get("/", async ({ db }) => await db.query.todos.findMany(), {
+        detail: {
+          tags: ["Todos"],
+        },
+      })
+      .get(
+        "/:id",
+        async ({ db, params }) => {
+          const [todo] = await db.query.todos.findMany({
+            where: eq(todos.id, params.id),
+            limit: 1,
+          });
+          if (!todo) throw new NotFoundError();
+          return todo;
+        },
+        {
+          params: WithIdDTO,
+          detail: {
+            tags: ["Todos"],
+          },
+        }
+      )
+      .post(
+        "/",
+        async ({ db, body }) => {
+          const [todo] = await db
+            .insert(todos)
+            .values({ id: crypto.randomUUID(), ...body })
+            .returning();
+          return todo;
+        },
+        {
+          body: TodoDTO,
+          detail: {
+            tags: ["Todos"],
+          },
+        }
+      )
+      .put(
+        "/:id",
+        async ({ db, params, body }) => {
+          let [todo] = await db.query.todos.findMany({
+            where: eq(todos.id, params.id),
+            limit: 1,
+          });
+          if (!todo) throw new NotFoundError();
 
-api.group("/todos", (router) =>
-  router
-    .get("/", async ({ db }) => await db.query.todos.findMany(), {
-      detail: {
-        tags: ["Todos"],
-      },
-    })
-    .get(
-      "/:id",
-      async ({ db, params }) => {
-        const [todo] = await db.query.todos.findMany({
-          where: eq(todos.id, params.id),
-          limit: 1,
-        });
-        if (!todo) throw new NotFoundError();
-        return todo;
-      },
-      {
-        params: WithIdDTO,
-        detail: {
-          tags: ["Todos"],
+          [todo] = await db
+            .update(todos)
+            .set(body)
+            .where(eq(todos.id, params.id))
+            .returning();
+          return todo;
         },
-      }
-    )
-    .post(
-      "/",
-      async ({ db, body }) => {
-        const [todo] = await db
-          .insert(todos)
-          .values({ id: crypto.randomUUID(), ...body })
-          .returning();
-        return todo;
-      },
-      {
-        body: TodoDTO,
-        detail: {
-          tags: ["Todos"],
-        },
-      }
-    )
-    .put(
-      "/:id",
-      async ({ db, params, body }) => {
-        let [todo] = await db.query.todos.findMany({
-          where: eq(todos.id, params.id),
-          limit: 1,
-        });
-        if (!todo) throw new NotFoundError();
+        {
+          params: WithIdDTO,
+          body: t.Partial(TodoDTO),
+          detail: {
+            tags: ["Todos"],
+          },
+        }
+      )
+      .delete(
+        "/:id",
+        async ({ db, params }) => {
+          let [todo] = await db.query.todos.findMany({
+            where: eq(todos.id, params.id),
+            limit: 1,
+          });
+          if (!todo) throw new NotFoundError();
 
-        [todo] = await db
-          .update(todos)
-          .set(body)
-          .where(eq(todos.id, params.id))
-          .returning();
-        return todo;
-      },
-      {
-        params: WithIdDTO,
-        body: t.Partial(TodoDTO),
-        detail: {
-          tags: ["Todos"],
+          [todo] = await db
+            .delete(todos)
+            .where(eq(todos.id, params.id))
+            .returning();
+          return todo;
         },
-      }
-    )
-    .delete(
-      "/:id",
-      async ({ db, params }) => {
-        let [todo] = await db.query.todos.findMany({
-          where: eq(todos.id, params.id),
-          limit: 1,
-        });
-        if (!todo) throw new NotFoundError();
-
-        [todo] = await db
-          .delete(todos)
-          .where(eq(todos.id, params.id))
-          .returning();
-        return todo;
-      },
-      {
-        params: WithIdDTO,
-        detail: {
-          tags: ["Todos"],
-        },
-      }
-    )
-);
+        {
+          params: WithIdDTO,
+          detail: {
+            tags: ["Todos"],
+          },
+        }
+      )
+  );
