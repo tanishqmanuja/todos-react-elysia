@@ -1,3 +1,5 @@
+![Logo](https://raw.github.com/tanishqmanuja/todos-react-elysia/main/assets/banner.png?maxAge=2592000)
+
 # Todos App (React + ElysiaJS)
 
 A simple starter fullstack todos app built with React and ElysiaJS using bunJS.
