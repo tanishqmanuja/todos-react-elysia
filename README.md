@@ -20,7 +20,7 @@ Uses the following tech stack.
 bun i
 ```
 
-### Starting Sev Server
+### Starting Dev Server ( Vite )
 
 ```sh
 bun dev
@@ -58,7 +58,7 @@ For Generating a todos.db file if not present
 bun db:push
 ```
 
-### Starting Sev Server
+### Starting Dev Server ( Bun )
 
 ```sh
 bun dev
