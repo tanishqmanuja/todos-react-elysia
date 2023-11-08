@@ -13,7 +13,6 @@
     "db:drop": "drizzle-kit drop"
   },
   "devDependencies": {
-    "@libsql/client": "^0.3.6",
     "bun-types": "latest",
     "drizzle-kit": "^0.19.13"
   },
