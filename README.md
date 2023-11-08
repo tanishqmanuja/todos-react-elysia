@@ -35,15 +35,30 @@ Uses the following tech stack.
 - DB: Bun SQlite
 - ORM: Drizzle
 
-> drizzle sqlite uses better-sqlite3 binaries for drizzle-kit:push support
-
 ### Installing Dependencies
 
 ```sh
 bun i
 ```
 
-### Setting DB Stuff
+### Setting up Local DB File
+
+For Generating a todos.db file if not present
+
+```sh
+bun db:generate
+bun db:migrate
+```
+
+### Starting Dev Server ( Bun )
+
+```sh
+bun dev
+```
+
+### Extra DB Stuff for Drizzle Kit Push
+
+> drizzle sqlite uses better-sqlite3 binaries for drizzle-kit:push support
 
 For building better-sqlite3 binaries
 
@@ -52,14 +67,9 @@ bun add --global node-gyp
 bun run --cwd node_modules/better-sqlite3 build-debug
 ```
 
-For Generating a todos.db file if not present
+Using the push command
 
 ```sh
+# not working yet (https://github.com/drizzle-team/drizzle-orm/issues/1293)
 bun db:push
-```
-
-### Starting Dev Server ( Bun )
-
-```sh
-bun dev
 ```
