@@ -1,6 +1,7 @@
 {
   "name": "client",
   "type": "module",
+  "version": "0.0.0",
   "scripts": {
     "dev": "bunx --bun vite",
     "build": "tsc && vite build",
@@ -12,7 +13,7 @@
     "lucide-react": "^0.279.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "server": "workspace:*",
+    "server": "workspace:../server",
     "zustand": "^4.4.1"
   },
   "devDependencies": {
