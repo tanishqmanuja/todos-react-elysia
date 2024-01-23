@@ -63,12 +63,12 @@ bun dev
   bun add --global node-gyp
   bun run --cwd node_modules/better-sqlite3 build-debug
   ```
-  > [!Note]  
-  > drizzle sqlite uses better-sqlite3 binaries for drizzle-kit:push support
+> [!Note]  
+> drizzle sqlite uses better-sqlite3 binaries for drizzle-kit:push support
 
 - Using the push command
   ```sh
   bun db:push
   ```
-  > [!WARNING]  
-  > Not working yet! (https://github.com/drizzle-team/drizzle-orm/issues/1293)
+> [!WARNING]  
+> May not work yet! (https://github.com/drizzle-team/drizzle-orm/issues/1293)
