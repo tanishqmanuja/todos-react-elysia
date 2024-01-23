@@ -1,0 +1,25 @@
+{
+  "setupTasks": [
+    {
+      "name": "Install Dependencies",
+      "command": "bun install"
+    }
+  ],
+  "tasks": {
+    "db": {
+      "name": "DB Push",
+      "command": "cd server && bun run db:push & cd ..",
+      "runAtStart": false
+    },
+    "dev": {
+      "name": "Dev",
+      "command": "bun dev",
+      "runAtStart": false
+    },
+    "build": {
+      "name": "Build",
+      "command": "yarn build",
+      "runAtStart": false
+    }
+  }
+}
