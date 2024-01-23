@@ -1,0 +1,9 @@
+{
+  "name": "Bun.js",
+  "image": "ghcr.io/nhaef/devcontainer-bun:latest",
+  "customizations": {
+    "vscode": {
+      "extensions": ["oven.bun-vscode", "biomejs.biome"]
+    }
+  }
+}
