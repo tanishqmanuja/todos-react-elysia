@@ -15,8 +15,5 @@
   "engines": {
     "bun": ">=1.0.0"
   },
-  "workspaces": [
-    "client",
-    "server"
-  ]
+  "workspaces": ["client", "server"]
 }
