@@ -1,6 +1,7 @@
 {
-  "name": "Bun.js",
-  "image": "ghcr.io/nhaef/devcontainer-bun:latest",
+  "name": "Node.js",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "postCreateCommand": "npm i -g bun",
   "customizations": {
     "vscode": {
       "extensions": ["oven.bun-vscode", "biomejs.biome"]
