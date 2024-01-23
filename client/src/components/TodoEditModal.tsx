@@ -4,7 +4,7 @@ import { useTodoStore } from "../shared/todos.store";
 export default function TodoEditModal() {
   const todosStore = useTodoStore();
   const todo = useTodoStore((state) =>
-    state.todos.find((t) => t.id === state.currentlyEditing)
+    state.todos.find((t) => t.id === state.currentlyEditing),
   );
 
   const [title, setTitle] = useState(todo?.title);

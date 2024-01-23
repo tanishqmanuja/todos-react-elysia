@@ -36,7 +36,7 @@ export const api = new Elysia({ prefix: "/api" })
           detail: {
             tags: ["Todos"],
           },
-        }
+        },
       )
       .post(
         "/",
@@ -52,7 +52,7 @@ export const api = new Elysia({ prefix: "/api" })
           detail: {
             tags: ["Todos"],
           },
-        }
+        },
       )
       .put(
         "/:id",
@@ -76,7 +76,7 @@ export const api = new Elysia({ prefix: "/api" })
           detail: {
             tags: ["Todos"],
           },
-        }
+        },
       )
       .delete(
         "/:id",
@@ -98,6 +98,6 @@ export const api = new Elysia({ prefix: "/api" })
           detail: {
             tags: ["Todos"],
           },
-        }
-      )
+        },
+      ),
   );

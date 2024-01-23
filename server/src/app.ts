@@ -18,7 +18,7 @@ const app = new Elysia()
         tags: [{ name: "Todos", description: "Todos endpoints" }],
       },
       exclude: ["/"],
-    })
+    }),
   )
   .get("/", ({ set }) => {
     set.redirect = "/index.html";

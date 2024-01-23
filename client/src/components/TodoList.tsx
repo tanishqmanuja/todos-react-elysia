@@ -3,7 +3,7 @@ import TodoListItem from "./TodoListItem";
 
 export default function TodoList() {
   const todos = useTodoStore((state) =>
-    state.todos.sort((a, b) => b.createdAt - a.createdAt)
+    state.todos.sort((a, b) => b.createdAt - a.createdAt),
   );
 
   const pendingTodos = todos.filter((todo) => !todo.completed);

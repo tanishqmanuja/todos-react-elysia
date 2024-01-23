@@ -17,7 +17,7 @@ export const useTodoStore = create(
         const serverTodo = await todosService.addTodo(todo);
         set(
           (state) => ({ ...state, todos: [...state.todos, serverTodo] }),
-          true
+          true,
         );
       },
       updateTodo: async (id: Todo["id"], todo: Partial<Omit<Todo, "id">>) => {
@@ -38,6 +38,6 @@ export const useTodoStore = create(
         set((state) => ({ ...state, currentlyEditing: id })),
       disableEditing: () =>
         set((state) => ({ ...state, currentlyEditing: null })),
-    })
-  )
+    }),
+  ),
 );
