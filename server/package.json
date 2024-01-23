@@ -23,6 +23,7 @@
     "@elysiajs/cors": "^0.7.1",
     "@elysiajs/static": "^0.7.1",
     "@elysiajs/swagger": "^0.7.3",
+    "@libsql/client": "^0.4.0-pre.7",
     "drizzle-orm": "^0.28.6",
     "elysia": "^0.7.15",
     "zod": "^3.22.2"
