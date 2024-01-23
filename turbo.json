@@ -8,6 +8,12 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "format:check": {
+      "dependsOn": ["^format:check"]
+    },
+    "format:write": {
+      "dependsOn": ["^format:write"]
     }
   }
 }

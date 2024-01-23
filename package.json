@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
-    "format:check": "biome format .",
-    "format:write": "biome format --write ."
+    "format:check": "turbo format:check",
+    "format:write": "turbo format:write"
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",

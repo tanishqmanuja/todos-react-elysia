@@ -6,14 +6,7 @@
     "indentStyle": "space",
     "indentWidth": 2,
     "lineWidth": 80,
-    "lineEnding": "lf",
-    "ignore": [
-      ".vscode",
-      "assets",
-      "**/node_modules/**",
-      "**/dist/**",
-      "**/.turbo/**"
-    ]
+    "lineEnding": "lf"
   },
   "organizeImports": {
     "enabled": true

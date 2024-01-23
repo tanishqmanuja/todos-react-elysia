@@ -11,7 +11,9 @@
     "db:migrate": "bun scripts/migrate.ts",
     "db:push": "drizzle-kit push:sqlite",
     "db:pull": "drizzle-kit introspect:sqlite",
-    "db:drop": "drizzle-kit drop"
+    "db:drop": "drizzle-kit drop",
+    "format:check": "biome format .",
+    "format:write": "biome format --write ."
   },
   "devDependencies": {
     "bun-types": "latest",
