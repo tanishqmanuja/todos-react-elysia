@@ -61,6 +61,8 @@ bun run dev
 
 Yes, run both at the same time, its that simple !!!
 
+https://github.com/tanishqmanuja/todos-react-elysia/assets/40914272/42b085bc-93c1-47f0-a361-c2d940121619
+
 ## 👨‍💻 Show your Support
 
 Give a ⭐️ if this project helped you!
