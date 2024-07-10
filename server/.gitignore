@@ -1,0 +1,13 @@
+# dependencies
+node_modules
+
+# env
+.env
+.env.*
+!.env.example
+
+# db migrations
+drizzle
+
+# local db file
+*.local.db

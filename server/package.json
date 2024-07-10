@@ -1,0 +1,43 @@
+{
+	"name": "@todos/server",
+	"private": true,
+	"module": "src/index.ts",
+	"type": "module",
+	"scripts": {
+		"start": "bun src/index.ts",
+		"dev": "bun --hot src/index.ts",
+		"db:pull": "drizzle-kit pull",
+		"db:push": "drizzle-kit push",
+		"db:check": "drizzle-kit check",
+		"db:generate": "drizzle-kit generate",
+		"db:migrate": "bun run scripts/migrate.ts",
+		"db:drop": "drizzle-kit drop",
+		"db:studio": "drizzle-kit studio",
+		"format": "biome format",
+		"format:write": "biome format --write",
+		"lint": "biome lint",
+		"lint:write": "biome lint --write"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"@types/bun": "^1.1.6",
+		"drizzle-kit": "^0.22.8"
+	},
+	"peerDependencies": {
+		"typescript": "^5.5.3"
+	},
+	"dependencies": {
+		"@elysiajs/cors": "^1.0.4",
+		"@elysiajs/swagger": "^1.0.5",
+		"@libsql/client": "^0.7.0",
+		"@sinclair/typebox": "^0.32.34",
+		"drizzle": "^1.4.0",
+		"drizzle-typebox": "^0.1.1",
+		"elysia": "^1.0.27",
+		"picocolors": "^1.0.1"
+	},
+	"trustedDependencies": ["@biomejs/biome"],
+	"exports": {
+		".": "./src/exports.ts"
+	}
+}

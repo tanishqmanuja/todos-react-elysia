@@ -1,0 +1,5 @@
+# dependencied
+node_modules
+
+# output
+dist
