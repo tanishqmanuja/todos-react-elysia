@@ -2,7 +2,7 @@
 
 # Todos App (React + ElysiaJS)
 
-A simple starter fullstack todos app built with React and ElysiaJS using bunJS. This project is purposefully kept minimal so that it can be used as a starting point for beginnersto to intermediate level developers.
+A simple starter fullstack todos app built with React and ElysiaJS using bunJS. This project is purposefully kept minimal so that it can be used as a starting point for beginners-intermediate level developers.
 
 ## 💻 Client
 
@@ -26,6 +26,9 @@ Uses the following tech stack.
 - ORM: Drizzle
 - Validation: Typebox
 
+
+## 🚀 Usage
+
 ### 📦 Installing Dependencies
 
 Run this command from the root directory.
@@ -34,9 +37,9 @@ Run this command from the root directory.
 bun install
 ```
 
-### 🚀 Usage
+### 🟣 Starting Backend
 
-**1.** To start elysia server, run this command from the server directory.
+To start elysia server, run this command from the **./server** directory.
 
 ```sh
 bun run dev
@@ -48,7 +51,9 @@ If this is your first time running the server, you'll need to generate the db fi
 bun run db:push
 ```
 
-**2.** To start vite dev server, run this command from the client directory.
+### 🔵 Starting Frontend
+
+To start vite dev server, run this command from the **./client** directory.
 
 ```sh
 bun run dev
@@ -56,6 +61,6 @@ bun run dev
 
 Yes, run both at the same time, its that simple !!!
 
-## 🌟 Show your Support
+## 👨‍💻 Show your Support
 
 Give a ⭐️ if this project helped you!
