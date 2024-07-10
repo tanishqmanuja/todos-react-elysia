@@ -7,6 +7,9 @@ const ELYSIA_VERSION = import.meta.require("elysia/package.json").version;
 
 const startTime = performance.now();
 
+// clear screen
+process.stdout.write("\x1Bc\n");
+
 app.listen(
 	{
 		port: env.PORT,
