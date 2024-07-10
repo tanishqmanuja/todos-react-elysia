@@ -20,7 +20,7 @@ export default function TodoEditModal() {
 		} else {
 			modalRef.current?.close();
 		}
-	}, [todo]);
+	}, [title, todo]);
 
 	return (
 		todo && (

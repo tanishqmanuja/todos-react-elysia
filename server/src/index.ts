@@ -19,7 +19,7 @@ app.listen(
 		const duration = performance.now() - startTime;
 
 		console.log(
-			`🦊 ${pc.green(pc.bold("Elysia") + " v" + ELYSIA_VERSION)} ${pc.gray("started in")} ${pc.bold(duration.toFixed(2))} ms\n`,
+			`🦊 ${pc.green(`${pc.bold("Elysia")} v${ELYSIA_VERSION}`)} ${pc.gray("started in")} ${pc.bold(duration.toFixed(2))} ms\n`,
 		);
 		console.log(
 			`${pc.green(" ➜ ")} ${pc.bold("Server")}:   ${pc.cyan(String(server.url))}`,

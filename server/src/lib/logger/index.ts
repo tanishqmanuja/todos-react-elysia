@@ -6,7 +6,7 @@ import * as fmt from "./formatters";
 export const logger = new Elysia({
 	name: "@todos/server/logger",
 })
-	.state("__requestStartTime", [NaN, NaN] as [number, number])
+	.state("__requestStartTime", [Number.NaN, Number.NaN] as [number, number])
 	.onRequest(({ store }) => {
 		store.__requestStartTime = process.hrtime();
 	})
@@ -19,7 +19,7 @@ export const logger = new Elysia({
 			pc.bold(fmt.method(request.method)),
 			url.pathname,
 			fmt.status(set.status),
-			pc.dim("[" + fmt.duration(duration) + "]"),
+			pc.dim(`[${fmt.duration(duration)}]`),
 		];
 
 		console.log(components.join(" "));
@@ -34,7 +34,7 @@ export const logger = new Elysia({
 			pc.bold(fmt.method(request.method)),
 			url.pathname,
 			fmt.status(status),
-			pc.dim("[" + fmt.duration(duration) + "]"),
+			pc.dim(`[${fmt.duration(duration)}]`),
 		];
 
 		console.log(components.join(" "));

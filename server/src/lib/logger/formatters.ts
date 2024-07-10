@@ -7,11 +7,14 @@ export function duration(hrtime: [number, number]): string {
 
 	if (seconds > 0) {
 		return `${seconds.toPrecision(2)}s`;
-	} else if (durationInMilliseconds > 1) {
+	}
+	if (durationInMilliseconds > 1) {
 		return `${durationInMilliseconds.toPrecision(2)}ms`;
-	} else if (durationInMicroseconds > 1) {
+	}
+	if (durationInMicroseconds > 1) {
 		return `${durationInMicroseconds.toPrecision(4)}µs`;
-	} else if (nanoseconds > 0) {
+	}
+	if (nanoseconds > 0) {
 		return `${nanoseconds.toPrecision(4)}ns`;
 	}
 

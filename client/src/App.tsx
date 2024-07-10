@@ -25,7 +25,7 @@ function App() {
 					id: "unable-to-fetch-todos",
 				});
 			});
-	}, []);
+	}, [fetchTodos]);
 
 	return (
 		<>
