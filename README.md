@@ -36,13 +36,19 @@ bun install
 
 ### 🚀 Usage
 
-To start elysia server, run this command from the server directory.
+**1.** To start elysia server, run this command from the server directory.
 
 ```sh
 bun run dev
 ```
 
-To start vite dev server, run this command from the client directory.
+If this is your first time running the server, you'll need to generate the db file with this command.
+
+```sh
+bun run db:push
+```
+
+**2.** To start vite dev server, run this command from the client directory.
 
 ```sh
 bun run dev
