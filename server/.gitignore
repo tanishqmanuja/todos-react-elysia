@@ -10,4 +10,5 @@ node_modules
 drizzle
 
 # local db file
+local.db
 *.local.db
