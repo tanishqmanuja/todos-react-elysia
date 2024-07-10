@@ -16,7 +16,8 @@
 		"format": "biome format",
 		"format:write": "biome format --write",
 		"lint": "biome lint",
-		"lint:write": "biome lint --write"
+		"lint:write": "biome lint --write",
+		"check": "biome check"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",

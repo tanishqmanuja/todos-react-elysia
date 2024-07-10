@@ -1,11 +1,12 @@
 {
-  "name": "todos",
-  "workspaces": ["client", "server"],
-  "devDependencies": {
-    "@biomejs/biome": "1.8.3"
-  },
-  "trustedDependencies": ["@biomejs/biome"],
-  "dependencies": {
-    "turbo": "^2.0.6"
-  }
+	"name": "todos",
+	"workspaces": ["client", "server"],
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3"
+	},
+	"trustedDependencies": ["@biomejs/biome"],
+	"dependencies": {
+		"turbo": "^2.0.6"
+	},
+	"packageManager": "bun@1.1.18"
 }
