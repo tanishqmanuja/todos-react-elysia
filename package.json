@@ -1,6 +1,10 @@
 {
 	"name": "todos",
 	"workspaces": ["client", "server"],
+	"scripts": {
+		"dev": "turbo run dev",
+		"check": "turbo run check"
+	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3"
 	},
