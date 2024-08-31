@@ -1,8 +1,11 @@
-import { type Static, type TSchema, Type } from "@sinclair/typebox";
+import { type Static, type TObject, Type } from "@sinclair/typebox";
 import { Value } from "@sinclair/typebox/value";
 
-function parseEnv<T extends TSchema>(schema: T, env: unknown): Static<T> {
-	const converted = Value.Convert(schema, Value.Default(schema, env));
+function parseEnv<T extends TObject>(schema: T, env: Record<string, string | undefined>): Static<T> {
+	const cleaned = Object.fromEntries(
+		Object.entries(env).filter(([key]) => Object.keys(schema.properties).includes(key)),
+	)
+	const converted = Value.Convert(schema, Value.Default(schema, cleaned));
 	const isValid = Value.Check(schema, converted);
 	if (!isValid) {
 		const errors = Value.Errors(schema, converted);
