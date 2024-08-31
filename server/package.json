@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"start": "bun src/index.ts",
-		"dev": "bun --hot src/index.ts",
+		"dev": "bun --watch src/index.ts",
 		"db:pull": "drizzle-kit pull",
 		"db:push": "drizzle-kit push",
 		"db:check": "drizzle-kit check",
@@ -21,20 +21,21 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.3",
-		"@types/bun": "^1.1.6",
+		"@types/bun": "^1.1.8",
 		"drizzle-kit": "^0.24.2"
 	},
 	"peerDependencies": {
-		"typescript": "^5.5.3"
+		"typescript": "^5.5.4"
 	},
 	"dependencies": {
-		"@elysiajs/cors": "^1.0.4",
-		"@elysiajs/swagger": "^1.0.5",
-		"@libsql/client": "^0.7.0",
-		"@sinclair/typebox": "^0.32.34",
+		"@elysiajs/cors": "^1.1.0",
+		"@elysiajs/swagger": "^1.1.1",
+		"@libsql/client": "^0.10.0",
+		"@sinclair/typebox": "^0.33.7",
+		"@tqman/nice-logger": "^1.0.1",
 		"drizzle-orm": "^0.33.0",
 		"drizzle-typebox": "^0.1.1",
-		"elysia": "^1.0.27",
+		"elysia": "^1.1.9",
 		"picocolors": "^1.0.1"
 	},
 	"trustedDependencies": ["@biomejs/biome"],
