@@ -4,9 +4,12 @@ import Elysia, { t } from "elysia";
 import { db } from "../db";
 import { TodoInsertSchema } from "../db/models";
 import { todos } from "../db/schema";
-import { withoutId } from "../utils/typebox";
 
 const ROUTE_PREFIX = "/todos";
+
+/* https://elysiajs.com/recipe/drizzle#type-instantiation-is-possibly-infinite */
+const createTodo = t.Omit(TodoInsertSchema, ["id"]);
+const updateTodo = t.Partial(createTodo);
 
 export const todosRoutes = new Elysia({ prefix: ROUTE_PREFIX })
 	.get("/", () => {
@@ -27,7 +30,7 @@ export const todosRoutes = new Elysia({ prefix: ROUTE_PREFIX })
 			return todo;
 		},
 		{
-			body: withoutId(TodoInsertSchema),
+			body: createTodo,
 		},
 	)
 	.patch(
@@ -41,7 +44,7 @@ export const todosRoutes = new Elysia({ prefix: ROUTE_PREFIX })
 			return todo;
 		},
 		{
-			body: t.Partial(withoutId(TodoInsertSchema)),
+			body: updateTodo,
 		},
 	)
 	.delete("/:id", async ({ params }) => {

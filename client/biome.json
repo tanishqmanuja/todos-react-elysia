@@ -78,6 +78,11 @@
 		},
 		"ignore": ["**/dist"]
 	},
+	"css": {
+		"formatter": {
+			"enabled": false
+		}
+	},
 	"json": {
 		"parser": {
 			"allowComments": true

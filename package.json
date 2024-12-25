@@ -6,11 +6,11 @@
 		"check": "turbo run check"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.8.3"
+		"@biomejs/biome": "1.9.4"
 	},
 	"trustedDependencies": ["@biomejs/biome"],
 	"dependencies": {
-		"turbo": "^2.0.6"
+		"turbo": "^2.3.3"
 	},
 	"packageManager": "bun@1.1.18"
 }

@@ -13,23 +13,23 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"@elysiajs/eden": "^1.0.14",
-		"@tailwindcss/vite": "^4.0.0-alpha.20",
+		"@elysiajs/eden": "^1.2.0",
+		"@tailwindcss/vite": "^4.0.0-beta.8",
 		"@todos/server": "workspace:*",
-		"lucide-react": "^0.437.0",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1",
+		"lucide-react": "^0.469.0",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
 		"sonner": "^1.5.0",
-		"tailwindcss": "^4.0.0-alpha.20",
-		"zustand": "^4.5.5"
+		"tailwindcss": "^4.0.0-beta.8",
+		"zustand": "^5.0.2"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.8.3",
-		"@types/react": "^18.3.5",
-		"@types/react-dom": "^18.3.0",
-		"@vitejs/plugin-react": "^4.3.1",
-		"typescript": "^5.5.4",
-		"vite": "^5.4.2"
+		"@biomejs/biome": "1.9.4",
+		"@types/react": "^19.0.2",
+		"@types/react-dom": "^19.0.2",
+		"@vitejs/plugin-react": "^4.3.4",
+		"typescript": "^5.7.2",
+		"vite": "^6.0.5"
 	},
 	"trustedDependencies": ["@biomejs/biome"]
 }
