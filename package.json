@@ -10,7 +10,7 @@
 	},
 	"trustedDependencies": ["@biomejs/biome"],
 	"dependencies": {
-		"turbo": "^2.3.3"
+		"turbo": "^2.5.2"
 	},
 	"packageManager": "bun@1.1.18"
 }
