@@ -9,8 +9,7 @@ const dbCredentials = {
 
 export default {
 	dbCredentials,
-	dialect: "sqlite",
-	driver: "turso",
+	dialect: "turso",
 	out: "./drizzle",
 	breakpoints: true,
 	schema: "./src/db/schema.ts",
