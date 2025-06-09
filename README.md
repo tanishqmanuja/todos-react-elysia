@@ -8,24 +8,30 @@ A simple starter fullstack todos app built with React and ElysiaJS using bunJS. 
 
 Uses the following tech stack.
 
-- Web Framework: React
-- State Management: Zustand
-- Styling: TailwindCSS
-- Icons: Lucide Icons
-- Toasts: Sonner
-- Tooling: Vite, Bun
+- Web Framework: [React](https://react.dev)
+- State Management: [Zustand](https://github.com/pmndrs/zustand)
+- Styling: [TailwindCSS](https://tailwindcss.com)
+- Icons: [Lucide Icons](https://lucide.dev)
+- Toasts: [Sonner](https://sonner.emilkowal.ski/)
+- Tooling: [Vite](https://vitejs.dev), [Bun](https://bun.sh)
 
 
 ## 🌐 Server
 
 Uses the following tech stack.
 
-- Runtime: Bun
-- Server Framework: Elysia
-- DB: SQlite (libsql client)
-- ORM: Drizzle
-- Validation: Typebox
+- Runtime: [Bun](https://bun.sh)
+- Server Framework: [Elysia](https://elysiajs.com)
+- DB: [SQlite](https://sqlite.org) (libsql client)
+- ORM: [Drizzle](https://orm.drizzle.team)
+- Validation: [Typebox](https://github.com/sinclairzx81/typebox)
 
+## 🪄 Other Goodies
+
+- Formatting: [BiomeJS](https://biomejs.dev)
+- Linting: [BiomeJS](https://biomejs.dev)
+- Build System: [Turbo](https://turbo.build)
+- Monorepo Management: [Bun Workspaces](https://bun.sh/docs/install/workspaces)
 
 ## 🚀 Usage
 
@@ -63,6 +69,6 @@ Yes, run both at the same time, its that simple !!!
 
 https://github.com/tanishqmanuja/todos-react-elysia/assets/40914272/42b085bc-93c1-47f0-a361-c2d940121619
 
-## 👨‍💻 Show your Support
+## 🍀 Show your Support
 
 Give a ⭐️ if this project helped you!
