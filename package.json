@@ -1,16 +1,21 @@
 {
 	"name": "todos",
-	"workspaces": ["client", "server"],
+	"workspaces": {
+		"packages": ["client", "server"],
+		"catalog": {
+			"@biomejs/biome": "1.9.4"
+		}
+	},
 	"scripts": {
 		"dev": "turbo run dev",
 		"check": "turbo run check"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4"
+		"@biomejs/biome": "catalog:"
 	},
 	"trustedDependencies": ["@biomejs/biome"],
 	"dependencies": {
-		"turbo": "^2.5.2"
+		"turbo": "^2.5.4"
 	},
-	"packageManager": "bun@1.1.18"
+	"packageManager": "bun@1.2.15"
 }
