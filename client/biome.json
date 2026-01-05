@@ -1,8 +1,9 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+	"root": false,
+	"$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
 	"extends": ["../biome.json"],
 	"files": {
-		"ignore": ["**/node_modules", "**/dist"]
+		"includes": ["**", "!**/node_modules", "!**/dist"]
 	},
 	"linter": {
 		"enabled": true,
@@ -11,11 +12,10 @@
 			"complexity": {
 				"noBannedTypes": "error",
 				"noExtraBooleanCast": "error",
-				"noMultipleSpacesInRegularExpressionLiterals": "error",
 				"noUselessCatch": "error",
 				"noUselessThisAlias": "error",
 				"noUselessTypeConstraint": "error",
-				"noWith": "error"
+				"noAdjacentSpacesInRegex": "error"
 			},
 			"correctness": {
 				"noConstAssign": "error",
@@ -25,7 +25,6 @@
 				"noGlobalObjectCalls": "error",
 				"noInnerDeclarations": "error",
 				"noInvalidConstructorSuper": "error",
-				"noNewSymbol": "error",
 				"noNonoctalDecimalEscape": "error",
 				"noPrecisionLoss": "error",
 				"noSelfAssign": "error",
@@ -38,14 +37,19 @@
 				"noUnsafeOptionalChaining": "error",
 				"noUnusedLabels": "error",
 				"noUnusedVariables": "error",
-				"useArrayLiterals": "off",
 				"useExhaustiveDependencies": "warn",
 				"useHookAtTopLevel": "error",
 				"useIsNan": "error",
 				"useValidForDirection": "error",
-				"useYield": "error"
+				"useYield": "error",
+				"noInvalidBuiltinInstantiation": "error",
+				"useValidTypeof": "error"
 			},
-			"style": { "noNamespace": "error", "useAsConstAssertion": "error" },
+			"style": {
+				"noNamespace": "error",
+				"useAsConstAssertion": "error",
+				"useArrayLiterals": "off"
+			},
 			"suspicious": {
 				"noAssignInExpressions": "error",
 				"noAsyncPromiseExecutor": "error",
@@ -73,10 +77,10 @@
 				"noUnsafeDeclarationMerging": "error",
 				"noUnsafeNegation": "error",
 				"useGetterReturn": "error",
-				"useValidTypeof": "error"
+				"noWith": "error"
 			}
 		},
-		"ignore": ["**/dist"]
+		"includes": ["**", "!**/dist"]
 	},
 	"css": {
 		"formatter": {

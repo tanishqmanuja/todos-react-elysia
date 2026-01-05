@@ -1,9 +1,1 @@
 @import "tailwindcss";
-
-body {
-  @apply bg-slate-200;
-}
-
-#root {
-  min-height: 100vh;
-}
